@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Dev notes
+- Added proxy to package.json that surpasses CORS errors
+
 ## Available Scripts
 
 In the project directory, you can run:
