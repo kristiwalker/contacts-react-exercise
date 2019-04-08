@@ -5,6 +5,7 @@ import './App.css';
 import Aux from '../hoc/Aux/Aux';
 import Title from '../components/Title/Title';
 import ContactCards from '../components/ContactCards/ContactCards';
+import Button from '../components/Button/Button';
 
 class App extends Component {
     constructor(props) {
@@ -39,6 +40,8 @@ class App extends Component {
         return (
             <Aux>
                 <Title />
+                <Button
+                    buttonType="Add" />
                 <ContactCards
                     contacts={this.state.contacts}/>
             </Aux>
