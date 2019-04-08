@@ -8,7 +8,7 @@ const contactCard = props => {
     return (
         <div className={contactClasses.ContactCard}>
             <Button buttonType={"Edit"}/>
-            <Button buttonType={"Delete"} click={props.click}/>
+            <Button buttonType={"Delete"} delete={props.delete}/>
             <p>Name: {props.name}</p>
             <p>Email: {props.email}</p>
             <p>Phone: {props.phone}</p>

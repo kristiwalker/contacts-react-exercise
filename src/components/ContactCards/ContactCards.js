@@ -11,7 +11,8 @@ const contactCards = props => {
                 email={person.email}
                 phone={person.phone}
                 key={person.id}
-                click={() => props.clicked(i)}
+                add={() => props.add}
+                delete={() => props.delete(i)}
             />
         );
     });

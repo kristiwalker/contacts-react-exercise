@@ -43,7 +43,7 @@ class App extends Component {
         // you should always update state in an immutable fashion (not mutating the original, but making a copy!)
         // es6 spreads out the objects from your old array to the new array as a copy
         const contacts = [...this.state.contacts];
-        contacts.splice(contactIndex, 1);
+        console.log(this.addContactHandler);
         this.setState({contacts: contacts});
     }
 
@@ -65,7 +65,8 @@ class App extends Component {
                     buttonType="Add" />
                 <ContactCards
                     contacts={this.state.contacts}
-                    clicked={this.deleteContactHandler}/>
+                    add={this.addContactHandler}
+                    delete={this.deleteContactHandler}/>
             </Aux>
         );
     }

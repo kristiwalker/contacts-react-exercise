@@ -3,11 +3,17 @@ import React from 'react';
 import classes from './Button.module.scss';
 
 const button = props => {
+
+    function isClicked(e) {
+        const buttonType = e.target.textContent.toLowerCase();
+        console.log(buttonType);
+        return props[buttonType];
+    }
+
     return (
         <button
-            // ref={toggleBtnRef}
             className={classes.Button}
-            onClick={props.click}>
+            onClick={isClicked}>
             {props.buttonType}
         </button>
     );
