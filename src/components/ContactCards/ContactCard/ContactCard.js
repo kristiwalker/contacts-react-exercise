@@ -1,19 +1,15 @@
 /* jshint esversion: 6 */
 import React from 'react';
-import Aux from '../../../hoc/Aux/Aux';
-import withClass from '../../../hoc/withClass';
-import classes from './ContactCard.css';
+import classes from './ContactCard.module.css';
 
 const contactCard = props => {
     return (
-        <Aux>
+        <div className={classes.ContactCard}>
             <p>Name: {props.name}</p>
             <p>Email: {props.email}</p>
             <p>Phone: {props.phone}</p>
-        </Aux>
+        </div>
     );
 }
 
-export default withClass(contactCard, classes.ContactCard);
-
-// export default contactCard;
+export default contactCard;
