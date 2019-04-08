@@ -10,7 +10,9 @@ const contactCards = props => {
                 name={person.name}
                 email={person.email}
                 phone={person.phone}
-                key={person.id}/>
+                key={person.id}
+                click={() => props.clicked(i)}
+            />
         );
     });
 }

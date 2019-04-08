@@ -1,11 +1,13 @@
 /*jshint esversion: 6 */
 
 import React, { Component } from 'react';
-import './App.css';
+
 import Aux from '../hoc/Aux/Aux';
 import Title from '../components/Title/Title';
 import ContactCards from '../components/ContactCards/ContactCards';
 import Button from '../components/Button/Button';
+
+import './App.scss';
 
 class App extends Component {
     constructor(props) {
@@ -35,15 +37,35 @@ class App extends Component {
             });
      }
 
+    addContactHandler = (contactIndex) => {
+        // slice copies the array and returns it to your variable as a new one that doesn't overrite the woritingal array
+        // const persons = this.state.persons.slice();
+        // you should always update state in an immutable fashion (not mutating the original, but making a copy!)
+        // es6 spreads out the objects from your old array to the new array as a copy
+        const contacts = [...this.state.contacts];
+        contacts.splice(contactIndex, 1);
+        this.setState({contacts: contacts});
+    }
+
+    deleteContactHandler = (contactIndex) => {
+        // slice copies the array and returns it to your variable as a new one that doesn't overrite the woritingal array
+        // const persons = this.state.persons.slice();
+        // you should always update state in an immutable fashion (not mutating the original, but making a copy!)
+        // es6 spreads out the objects from your old array to the new array as a copy
+        const contacts = [...this.state.contacts];
+        contacts.splice(contactIndex, 1);
+        this.setState({contacts: contacts});
+    }
+
     render() {
-        console.log(this.state.contacts);
         return (
             <Aux>
                 <Title />
                 <Button
                     buttonType="Add" />
                 <ContactCards
-                    contacts={this.state.contacts}/>
+                    contacts={this.state.contacts}
+                    clicked={this.deleteContactHandler}/>
             </Aux>
         );
     }
