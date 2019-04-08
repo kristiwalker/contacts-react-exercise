@@ -1,6 +1,8 @@
 /* jshint esversion: 6 */
 import React from 'react';
 import Aux from '../../../hoc/Aux/Aux';
+import withClass from '../../../hoc/withClass';
+import classes from './ContactCard.css';
 
 const contactCard = props => {
     return (
@@ -12,4 +14,6 @@ const contactCard = props => {
     );
 }
 
-export default contactCard;
+export default withClass(contactCard, classes.ContactCard);
+
+// export default contactCard;
