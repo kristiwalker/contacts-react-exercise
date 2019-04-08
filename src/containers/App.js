@@ -3,6 +3,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Aux from '../hoc/Aux/Aux';
+import Title from '../components/Title/Title';
+import ContactCards from '../components/ContactCards/ContactCards';
 
 class App extends Component {
     constructor(props) {
@@ -33,12 +35,12 @@ class App extends Component {
      }
 
     render() {
+        console.log(this.state.contacts);
         return (
             <Aux>
-                <header className = "App-header" >
-                    <p>Edit <code> src / App.js </code> and save to reload. </p>
-                    Learn React
-                </header>
+                <Title />
+                <ContactCards
+                    contacts={this.state.contacts}/>
             </Aux>
         );
     }
