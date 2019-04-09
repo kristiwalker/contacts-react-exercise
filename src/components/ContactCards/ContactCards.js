@@ -7,11 +7,13 @@ const contactCards = props => {
     return props.contacts.map((person, i) => {
         return (
             <ContactCard
+                id={person.id}
                 name={person.name}
                 email={person.email}
                 phone={person.phone}
                 key={person.id}
-                add={() => props.add}
+                edit={() => props.edit(i)}
+                editing={props.editing}
                 delete={() => props.delete(i)}
             />
         );

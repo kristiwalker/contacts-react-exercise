@@ -4,8 +4,21 @@
     border: 1px solid #eee;
     box-shadow: 0 2px 3px #ccc;
     padding: 16px;
-    text-align: center;
+    text-align: left;
 }
+
+// .ContactCard input {
+//     border: none;
+//     display: inline;
+//     font-family: inherit;
+//     font-size: inherit;
+//     padding: none;
+//     width: auto;
+// }
+//
+// input[type="text"], textarea, select { 
+//     outline: none;
+// }
 
 @media (min-width: 500px) {
     .ContactCard {

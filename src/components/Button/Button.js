@@ -1,21 +1,28 @@
 /* jshint esversion: 6 */
 import React from 'react';
+import Aux from '../../hoc/Aux/Aux';
+
 import classes from './Button.module.scss';
 
 const button = props => {
 
-    function isClicked(e) {
-        const buttonType = e.target.textContent.toLowerCase();
-        console.log(buttonType);
-        return props[buttonType];
+    let action;
+    const type = props.buttonType.toLowerCase();
+
+    if (type === "delete") {
+        action = props.delete;
+    } else if (type === "add" || type === "save") {
+        action = props.add;
+    } else if (type === "edit") {
+        action = props.edit;
     }
 
+    const button = <button className={classes.Button} onClick={action}>{props.buttonType}</button>;
+
     return (
-        <button
-            className={classes.Button}
-            onClick={isClicked}>
-            {props.buttonType}
-        </button>
+        <Aux>
+            {button}
+        </Aux>
     );
 }
 
