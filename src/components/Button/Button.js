@@ -11,9 +11,9 @@ const button = props => {
 
     if (type === "delete") {
         action = props.delete;
-    } else if (type === "add" || type === "save") {
+    } else if (type === "add") {
         action = props.add;
-    } else if (type === "edit") {
+    } else {
         action = props.edit;
     }
 
