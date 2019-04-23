@@ -2,11 +2,11 @@
 This app will parse a list of contacts from a json endpoint (not provided in repo) and display a simple React interface to add, delete and edit contacts.
 
 ## Getting started
-Clone this repo, open the directory in your terminal and then run `npm install`.
-Once that's done, run `npm start` to view the project.
-In a new terminal window, open the directory that holds your express server and run that too (see project instructions).
+- Clone this repo, open the directory in your terminal and then run `npm install`.
+- Run `npm start` to view the project.
+- In a new terminal window, open the directory that holds your express server and run that too.
 
-- Added proxy to package.json that surpasses CORS errors
+Note: In order to avoid CORS errors when fetching from another localhost, this app uses a proxy in package.json.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
