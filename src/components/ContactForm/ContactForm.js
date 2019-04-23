@@ -1,10 +1,11 @@
 /* jshint esversion: 6 */
 import React from 'react';
-import Aux from '../../hoc/Aux/Aux';
 import Button from '../Button/Button';
 
 import contactClasses from '../ContactCards/ContactCard/ContactCard.module.scss';
 
+//TODO: make components for repeating elements like inputs
+//TODO: inputs need validation
 const contactForm = props => {
     return (
         <div className={contactClasses.ContactCard}>

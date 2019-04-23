@@ -38,41 +38,46 @@ class App extends Component {
             });
     }
 
+    // when add button is clicked, add new contact object
     addContactHandler = (e) => {
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         let phone = document.getElementById('phone').value;
         phone = formatPhoneNumber(phone);
+
         const id = Math.random() * 10;
 
         const contacts = [...this.state.contacts];
-        const test = {"id":id,"name":name,"email":email,"phone":phone}
-        contacts.unshift(test);
+        const newObj = {"id":id,"name":name,"email":email,"phone":phone}
+        contacts.unshift(newObj);
 
         this.setState({contacts: contacts});
     }
 
+    // check for when edit button is clicked
     editContactHandler = (e, i) => {
-        console.log(i);
+        // set editing as true or false
         const inactive = this.state.editing;
         this.setState({editing: !inactive});
+
         this.setState({editingIndex: i});
     }
 
+    // check for when input is changed
     changeHandler = (e, id) => {
         const cardIndex = this.state.contacts.findIndex(item => {
             return item.id === id;
         });
 
         // spread the object properties into a new object rather than mutating the original person array reference
-        // this is just an object with peroperties for the person that had the matching id
         const card = {
             ...this.state.contacts[cardIndex]
         };
 
-        // update name of the person that had the matching id
+        // update value of the targeted contact key that had the matching id
         card[e.target.name] = e.target.value;
 
+        // if it's a phone number, format it
         if (e.target.name === 'phone') {
             card[e.target.name] = formatPhoneNumber(card[e.target.name]);
         }
@@ -91,7 +96,7 @@ class App extends Component {
         });
     }
 
-
+    // check for when delete button is clicked, then remove object
     deleteContactHandler = (contactIndex) => {
         const contacts = [...this.state.contacts];
         contacts.splice(contactIndex, 1);
@@ -103,15 +108,15 @@ class App extends Component {
             <div className="App">
                 <h1>Your contacts</h1>
                 <h2>View, add, edit or delete</h2>
-                <ContactForm
-                    add={this.addContactHandler}/>
+                <ContactForm add={this.addContactHandler} />
                 <ContactCards
                     contacts={this.state.contacts}
                     edit={this.editContactHandler}
                     editing={this.state.editing}
                     change={this.changeHandler}
                     editingIndex={this.state.editingIndex}
-                    delete={this.deleteContactHandler}/>
+                    delete={this.deleteContactHandler}
+                />
             </div>
         );
     }

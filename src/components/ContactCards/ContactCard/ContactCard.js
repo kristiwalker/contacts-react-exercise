@@ -10,6 +10,9 @@ const contactCard = props => {
     let phoneField = props.phone;
     let buttonText = "Edit";
 
+    // TODO: Make component for inputs
+    // TODO: Inputs need validation
+    // if edit button is clicked (active)
     if (props.editablePerson) {
         nameField = <input name="name" type="text" defaultValue={props.name} onChange={props.change} />;
         emailField = <input name="email" type="text" defaultValue={props.email} onChange={props.change} />;
@@ -17,10 +20,7 @@ const contactCard = props => {
         buttonText = "Save";
     }
 
-    // combine vars into var template
-    // when button is clicked, select its parent component
-    // pass conditional from contact cardS to decide which template to use
-
+    // TODO: Make component for repeating p tags
     return (
         <div id={props.id} className={contactClasses.ContactCard}>
             <p><strong>Name:</strong> {nameField}</p>

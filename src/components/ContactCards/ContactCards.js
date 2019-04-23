@@ -1,7 +1,6 @@
 /* jshint esversion: 6 */
 import React from 'react';
 import ContactCard from './ContactCard/ContactCard';
-import Aux from '../../hoc/Aux/Aux';
 
 const contactCards = props => {
     return props.contacts.map((person, i) => {
@@ -10,7 +9,6 @@ const contactCards = props => {
         if (props.editing && i === props.editingIndex) {
             editablePerson = true;
         }
-
 
         return (
             <ContactCard
