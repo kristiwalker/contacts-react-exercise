@@ -1,22 +1,10 @@
 /*jshint esversion: 6 */
+import React, {Component} from 'react';
 
-import React, { Component } from 'react';
-
-import Aux from '../hoc/Aux/Aux';
 import ContactCards from '../components/ContactCards/ContactCards';
 import ContactForm from '../components/ContactForm/ContactForm';
-import Button from '../components/Button/Button';
 
 import './App.scss';
-
-function formatPhoneNumber(phoneNumberString) {
-  var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
-  var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
-  if (match) {
-    return '(' + match[1] + ') ' + match[2] + '-' + match[3]
-  }
-  return null
-}
 
 class App extends Component {
     constructor(props) {
@@ -127,6 +115,15 @@ class App extends Component {
             </div>
         );
     }
+}
+
+const formatPhoneNumber = (phoneNumberString) => {
+  var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+  var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+  if (match) {
+    return '(' + match[1] + ') ' + match[2] + '-' + match[3]
+  }
+  return null
 }
 
 export default App;

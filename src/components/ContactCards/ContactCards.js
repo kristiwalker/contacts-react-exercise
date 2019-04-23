@@ -20,7 +20,6 @@ const contactCards = props => {
                 email={person.email}
                 phone={person.phone}
                 edit={(e) => props.edit(e, i)}
-                editing={props.editing}
                 change={(e) => props.change(e, person.id)}
                 editablePerson={editablePerson}
                 delete={() => props.delete(i)}
