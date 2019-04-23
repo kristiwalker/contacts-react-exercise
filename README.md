@@ -1,5 +1,5 @@
 # React Contacts app
-This app will parse a list of contacts from a json endpoint (not provided in repo), load them into the shared state store of your choice, and develop a simple React interface to add, delete and edit them.
+This app will parse a list of contacts from a json endpoint (not provided in repo) and display a simple React interface to add, delete and edit contacts.
 
 ## Getting started
 Clone this repo, open the directory in your terminal and then run `npm install`.
